@@ -1,0 +1,26 @@
+name: Build Docker Images
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-main:
+    name: Build Docker Principale
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del codice
+        uses: actions/checkout@v4
+
+      - name: Build immagine principale
+        run: docker build . --file Dockerfile --tag immagine-main:latest
+
+  build-jupyter:
+    name: Build Docker Jupyter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del codice
+        uses: actions/checkout@v4
+
+      - name: Build immagine Jupyter
+        run: docker build ./dockerfile_jupyter --file ./dockerfile_jupyter/Dockerfile --tag immagine-jupyter:latest

@@ -11,5 +11,5 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build immagine principale
-        run: docker build . -t bioinfo:update
+        run: docker build . -t bioinfo:lastest
 

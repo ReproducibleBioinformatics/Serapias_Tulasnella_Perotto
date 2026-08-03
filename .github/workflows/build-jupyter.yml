@@ -1,0 +1,12 @@
+name: Build Jupyter
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Dockerfile Jupyter
+        run: docker build -f dockerfile_jupyter/Dockerfile -t mio-jupyter ./dockerfile_jupyter

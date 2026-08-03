@@ -1,0 +1,15 @@
+name: Build image to Docker Hub
+on:
+  [workflow_dispatch]
+
+jobs:
+  build-main: 
+    name: Build Docker Principale
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del codice
+        uses: actions/checkout@v4
+
+      - name: Build immagine principale
+        run: docker build . -t bioinfo:update
+

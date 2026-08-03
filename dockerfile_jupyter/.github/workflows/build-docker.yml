@@ -1,0 +1,14 @@
+name: Build jupiter image to Docker Hub
+on:
+  [workflow_dispatch]
+
+jobs:
+  build-jupyter:
+    name: Build Docker Jupyter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del codice
+        uses: actions/checkout@v4
+
+      - name: Build immagine Jupyter
+        run: docker build . -t immagine-jupyter:latest

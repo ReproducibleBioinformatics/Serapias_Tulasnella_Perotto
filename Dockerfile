@@ -76,3 +76,5 @@ RUN Rscript /tmp/install.R && \
 WORKDIR /home/analisi
 
 CMD ["/bin/bash"]
+
+#verifico build automatica

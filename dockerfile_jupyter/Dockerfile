@@ -1,4 +1,4 @@
-FROM bioinfo:latest
+FROM ghcr.io/reproduciblebioinformatics/bioinfo:latest
 
 USER root
 
